@@ -323,6 +323,31 @@
     .hero h1{font-size:1.72rem;}
   }
 
+
+  /* ==== Hero com video (v2) ==== */
+  .hero-video{display:flex;flex-direction:column;justify-content:space-between;min-height:calc(100svh - 69px);min-height:calc(100vh - 69px);min-height:calc(100svh - 69px);color:#fff;border-bottom:0;background:#0b3b4a;}
+  .hero-video .hero-sea{background:#0b3b4a url(/img/hero-poster-d.webp) center/cover no-repeat;}
+  .hero-video .hero-sea::after{background:linear-gradient(180deg,rgba(6,28,44,.55) 0%,rgba(6,28,44,.34) 36%,rgba(6,28,44,.14) 58%,rgba(6,28,44,.70) 100%);}
+  .hero-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .9s ease;}
+  .hero-vid.on{opacity:1;}
+  .hero-video .hero-copy{position:relative;z-index:1;padding-block:34px 18px;max-width:760px;margin-inline:0;}
+  @media (min-width:1100px){.hero-video .hero-copy{margin-left:max(24px,calc((100vw - 1140px)/2));}}
+  .hero-video .eyebrow{color:#d9f6f1;}
+  .hero-video h1{color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.35);font-size:clamp(2rem,5vw,3.6rem);}
+  .hero-video h1 em{color:#b8f1e6;}
+  .hero-video p.lead{color:rgba(255,255,255,.92);text-shadow:0 1px 10px rgba(0,0,0,.35);max-width:46ch;}
+  .hero-video .hero-ctas .btn-primary{background:#fff;color:var(--blue);box-shadow:0 10px 26px rgba(0,0,0,.25);}
+  .hero-video .hero-ctas .btn-ghost{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.7);color:#fff;backdrop-filter:blur(6px);}
+  .hero-peek{position:relative;z-index:1;padding-bottom:20px;}
+  .hero-peek-row{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:4px;scrollbar-width:none;}
+  .hero-peek-row::-webkit-scrollbar{display:none;}
+  .peek-card{flex:0 0 148px;scroll-snap-align:start;display:flex;flex-direction:column;gap:2px;text-decoration:none;color:#fff;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);border-radius:16px;padding:7px 7px 10px;backdrop-filter:blur(8px);}
+  .peek-card img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:11px;display:block;}
+  .peek-name{font-weight:700;font-size:.9rem;margin-top:6px;padding-inline:3px;}
+  .peek-tag{font-size:.72rem;opacity:.85;padding-inline:3px;line-height:1.25;}
+  @media (min-width:760px){.hero-peek-row{overflow:visible;}.peek-card{flex:1 1 0;max-width:230px;}.hero-video{min-height:620px;}}
+  @media (max-width:700px){.hero-video .hero-grid{display:none;}.hero-video .hero-ctas{margin-top:20px;}.hero-video .hero-sea{background-image:url(/img/hero-poster-m.webp);}}
+  @media (prefers-reduced-motion:reduce){.hero-vid{display:none;}}
   /* ==== Horizontal scroll carousels on mobile (like most travel-agency apps) ==== */
   @media (max-width:700px){
     .dest-grid{display:flex;overflow-x:auto;gap:14px;padding-bottom:8px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;margin-inline:-24px;padding-inline:24px;}
