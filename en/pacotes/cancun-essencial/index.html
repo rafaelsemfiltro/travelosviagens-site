@@ -411,21 +411,40 @@
 .pkg-back{display:inline-block;margin-bottom:20px;font-size:.9rem;color:var(--blue);text-decoration:none;font-weight:600;}
 .pkg-back:hover{text-decoration:underline;}
 .pkg-hero .ticket-tier{display:block;margin-bottom:8px;}
-.pkg-hero h1{font-size:clamp(1.6rem,4vw,2.3rem);margin:4px 0 12px;}
+.pkg-hero h1{margin-bottom:0;font-size:clamp(1.6rem,4vw,2.3rem);margin:4px 0 12px;}
 .pkg-hero p{max-width:56ch;}
-.pkg-price-box{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--turq-ink);border-radius:16px;padding:22px 24px;margin:24px 0;box-shadow:var(--shadow);}
+.pkg-photo{display:block;width:100%;height:clamp(180px,42vw,360px);object-fit:cover;border-radius:18px;margin:0 0 20px;background:var(--sand);}
+.pkg-price-box{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--turq-ink);border-radius:16px;padding:20px 22px;margin:22px 0;box-shadow:var(--shadow);}
 .pkg-price-box .pp{font-size:1.3rem;font-weight:700;}
-.pkg-price-box .note{font-size:.85rem;color:var(--ink-soft);margin-top:8px;}
-.pkg-section{margin:28px 0;}
-.pkg-section h2{font-size:1.05rem;margin-bottom:10px;}
-.pkg-list{margin:0;padding-left:1.2em;}
-.pkg-list li{margin-bottom:6px;}
-.pkg-flight{background:var(--sand);border:1px dashed var(--line);border-radius:12px;padding:14px 16px;font-size:.92rem;}
-.pkg-flight div{margin-bottom:4px;}
-.pkg-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px;}
+.pkg-price-box .tot{font-size:.9rem;color:var(--ink-soft);margin:4px 0 16px;}
+.pkg-feats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:24px 0 14px;}
+.pkg-feat{display:flex;gap:10px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;}
+.pkg-feat svg{flex:0 0 22px;width:22px;height:22px;stroke:var(--turq-ink);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;margin-top:2px;}
+.pkg-feat b{display:block;font-size:.95rem;line-height:1.25;}
+.pkg-feat span{display:block;font-size:.82rem;color:var(--ink-soft);margin-top:3px;line-height:1.35;}
+.pkg-extras{font-size:.88rem;color:var(--ink-soft);margin:0 0 6px;}
+.pkg-more{margin:4px 0 0;font-size:.9rem;}
+.pkg-more summary{cursor:pointer;color:var(--blue);font-weight:600;padding:8px 0;}
+.pkg-more h3{font-size:.95rem;margin:14px 0 6px;}
+.pkg-more ul{margin:0;padding-left:1.2em;}
+.pkg-more li{margin-bottom:5px;}
+.pkg-more p{margin:8px 0;color:var(--ink-soft);}
+.pkg-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px;}
+.pkg-sticky{display:none;}
+@media (max-width:719px){
+  .pkg-wrap{padding-top:22px;}
+  .pkg-feats{grid-template-columns:1fr;gap:8px;}
+  .pkg-feat{padding:12px 14px;}
+  .pkg-sticky{display:block;position:fixed;left:0;right:0;bottom:0;z-index:61;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:var(--card);border-top:1px solid var(--line);box-shadow:0 -8px 24px -12px rgba(0,0,0,.25);}
+  .pkg-sticky .btn{display:block;width:100%;text-align:center;}
+  .pkg-page .wa-float{display:none;}
+  .pkg-page footer{padding-bottom:90px;}
+  .pkg-cta{display:none;}
+  .pkg-page .ck{bottom:84px!important;z-index:62;}
+}
 </style>
 </head>
-<body>
+<body class="pkg-page">
 <a class="skip" href="#pkg-conteudo">Skip to content</a>
 
 <header class="nav">
@@ -445,47 +464,34 @@
   <div class="pkg-wrap">
     <a class="pkg-back" href="/en/#pacotes">← Back to packages</a>
 
+    <img class="pkg-photo" src="/img/pkg-essencial.webp" srcset="/img/pkg-essencial.webp 640w, /img/pkg-essencial-lg.webp 1280w" sizes="(max-width:760px) 100vw, 712px" width="640" height="360" alt="">
+
     <div class="pkg-hero">
       <span class="ticket-tier tier-ess">Cancún Essential</span>
       <h1>All inclusive in the Hotel Zone, for 5 or 7 nights.</h1>
-      <p>Five or seven nights at an all-inclusive resort in the Hotel Zone, with meals and drinks included, a flight from Guarulhos and a private transfer. An easy way into the resort style, with the budget under control.</p>
     </div>
 
     <div class="pkg-price-box">
       <div class="pp">From R$ 5,172 per person (5 nights)</div>
-      <div class="note">R$ 10,344 total for 2 people, for 5 nights. The 7-night option is quoted on request. Reference price, subject to availability and rate reconfirmation. <a href="/en/termos/">See conditions</a></div>
+      <div class="tot">Total for 2 people: R$ 10,344 (5 nights)</div>
+      <a class="btn btn-primary" href="https://wa.me/525666455261?text=Hi%21%20I%20saw%20the%20Canc%C3%BAn%20Essential%20package%20on%20the%20site%20and%20want%20to%20see%20the%20price%20for%20my%20dates." target="_blank" rel="noopener">See the price for my dates</a>
     </div>
 
-    <div class="pkg-section">
-      <h2>Flight and stay</h2>
-      <div class="pkg-flight">
-        <div>Outbound: May 6, 2027 — Guarulhos 1:00 AM → Cancún 11:35 AM</div>
-        <div>Return (5 nights): May 11, 2027 — Cancún 12:35 PM → Guarulhos 3:10 AM (arriving May 12, 2027)</div>
-        <div>Return (7 nights): May 13, 2027 — Cancún 12:35 PM → Guarulhos 3:10 AM (arriving May 14, 2027)</div>
-      </div>
-      <p style="margin-top:12px;">Stay: Cancun Bay or similar · 5 or 7 nights · room for two adults</p>
-      <p>All inclusive: meals and drinks at the hotel</p>
+    <div class="pkg-feats">
+        <div class="pkg-feat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 16l20-7-20-7 4 7-4 7z"/><path d="M6 9h8"/></svg><div><b>Round-trip flight</b><span>From Guarulhos, personal item included</span></div></div>
+        <div class="pkg-feat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18V7"/><path d="M3 13h18v5"/><path d="M21 13v-2a3 3 0 0 0-3-3h-7v5"/><circle cx="7" cy="10.5" r="1.6"/></svg><div><b>Cancun Bay or similar</b><span>All inclusive · 5 or 7 nights</span></div></div>
+        <div class="pkg-feat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 16V8a2 2 0 0 1 2-2h10l5 5v5"/><path d="M3 16h18"/><circle cx="7.5" cy="17" r="1.7"/><circle cx="16.5" cy="17" r="1.7"/></svg><div><b>Private transfer</b><span>Airport, hotel and airport</span></div></div>
+        <div class="pkg-feat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><div><b>Support in Cancún</b><span>On WhatsApp throughout your trip</span></div></div>
     </div>
 
-    <div class="pkg-section">
-      <h2>Included</h2>
-      <ul class="pkg-list">
-        <li>Round-trip economy flights, Guarulhos–Cancún, with a personal item</li>
-        <li>5 or 7 all-inclusive nights at Cancun Bay or similar, room for two adults</li>
-        <li>Private transfer for two passengers, airport–hotel–airport</li>
-      </ul>
-    </div>
-
-    <div class="pkg-section">
-      <h2>Not included</h2>
-      <ul class="pkg-list">
-        <li>Checked baggage and the local tax charged by the hotel</li>
-        <li>Tours, tickets and travel insurance</li>
-      </ul>
-    </div>
+    <details class="pkg-more">
+      <summary>See all conditions</summary>
+      <p class="pkg-extras">Not included: checked bags, hotel local tax, tours and travel insurance.</p>
+      <p>The 7-night option is quoted on request. Reference price, subject to availability and rate reconfirmation. <a href="/en/termos/">See conditions</a></p>
+    </details>
 
     <div class="pkg-cta">
-      <a class="btn btn-primary" href="https://wa.me/525666455261?text=Hi%21%20I%27m%20interested%20in%20the%20Canc%C3%BAn%20Essential%20package.%20Can%20you%20send%20more%20details%3F" target="_blank" rel="noopener">Request</a>
+      <a class="btn btn-primary" href="https://wa.me/525666455261?text=Hi%21%20I%20saw%20the%20Canc%C3%BAn%20Essential%20package%20on%20the%20site%20and%20want%20to%20see%20the%20price%20for%20my%20dates." target="_blank" rel="noopener">See the price for my dates</a>
     </div>
   </div>
 </main>
@@ -516,6 +522,7 @@
 <a class="wa-float" href="https://wa.me/525666455261?text=Hi%21%20I%27m%20interested%20in%20the%20Canc%C3%BAn%20Essential%20package.%20Can%20you%20send%20more%20details%3F" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
   <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M17.47 14.38c-.28-.14-1.66-.82-1.92-.91-.26-.1-.45-.14-.63.14-.19.28-.73.91-.9 1.1-.16.19-.33.21-.61.07-.28-.14-1.19-.44-2.26-1.4-.84-.75-1.4-1.67-1.57-1.95-.16-.28-.02-.43.12-.57.13-.13.28-.33.42-.5.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.5-.07-.14-.63-1.53-.87-2.1-.23-.55-.46-.48-.63-.49-.16-.01-.35-.01-.54-.01-.19 0-.5.07-.76.35-.26.28-1 1-1 2.43 0 1.43 1.03 2.82 1.18 3.01.14.19 2.03 3.1 4.92 4.35.69.3 1.22.48 1.64.61.69.22 1.31.19 1.81.11.55-.08 1.66-.68 1.9-1.33.23-.66.23-1.22.16-1.33-.07-.12-.26-.19-.54-.33z"/><path d="M12.02 2C6.5 2 2.02 6.48 2.02 12c0 1.9.53 3.68 1.44 5.19L2 22l4.94-1.4A9.94 9.94 0 0 0 12.02 22C17.53 22 22 17.52 22 12S17.53 2 12.02 2zm0 18.2c-1.68 0-3.24-.49-4.55-1.34l-.33-.2-3.02.86.85-2.94-.21-.34a8.18 8.18 0 0 1-1.26-4.24c0-4.52 3.68-8.2 8.52-8.2 4.53 0 8.2 3.68 8.2 8.2 0 4.53-3.67 8.2-8.2 8.2z"/></svg>
 </a>
+<div class="pkg-sticky"><a class="btn btn-primary" href="https://wa.me/525666455261?text=Hi%21%20I%20saw%20the%20Canc%C3%BAn%20Essential%20package%20on%20the%20site%20and%20want%20to%20see%20the%20price%20for%20my%20dates." target="_blank" rel="noopener">See the price for my dates</a></div>
 <script>try{sessionStorage.setItem("tv_pkg","essencial")}catch(e){}</script>
 <style>
 .ck{position:fixed;left:16px;right:16px;bottom:16px;z-index:60;max-width:560px;margin:0 auto;background:#fff;color:#14213d;border:1px solid #e4dccb;border-radius:16px;box-shadow:0 12px 40px rgba(20,33,61,.18);padding:16px 18px;font:500 .88rem/1.45 Manrope,system-ui,sans-serif;display:none}
